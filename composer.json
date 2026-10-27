@@ -1,0 +1,77 @@
+{
+  "name": "asrepoya/nova",
+  "description": "Private Laravel Nova 4 fork with Laravel 13 compatibility patches (authorized license required).",
+  "keywords": [
+    "laravel",
+    "admin",
+    "nova"
+  ],
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Taylor Otwell",
+      "email": "taylor@laravel.com"
+    }
+  ],
+  "replace": {
+    "laravel/nova": "self.version"
+  },
+  "require": {
+    "php": "^8.1",
+    "brick/money": "^0.5.0|^0.6.0|^0.7.0|^0.8.0|^0.9|^0.10",
+    "doctrine/dbal": "^2.13.3|^3.1.2|^4.0",
+    "illuminate/support": "^10.48.29|^11.44.1|^12.0|^13.0",
+    "inertiajs/inertia-laravel": "^0.6.0|^1.0|^2.0",
+    "laravel/ui": "^4.6.3",
+    "nesbot/carbon": "^2.62.1|^3.0",
+    "rap2hpoutre/fast-excel": "^3.2|^4.1|^5.0",
+    "spatie/once": "^1.1|^2.0|^3.0",
+    "symfony/console": "^6.0|^7.0|^8.0",
+    "symfony/finder": "^6.0|^7.0|^8.0",
+    "symfony/polyfill-intl-icu": "^1.22.1",
+    "symfony/process": "^6.0|^7.0|^8.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.6",
+    "mockery/mockery": "^1.4.4",
+    "phpunit/phpunit": "^10.1|^11.0|^12.0",
+    "predis/predis": "^1.1.9|^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Laravel\\Nova\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Laravel\\Nova\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "4.x-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Laravel\\Nova\\NovaCoreServiceProvider"
+      ],
+      "aliases": {
+        "Nova": "Laravel\\Nova\\Nova"
+      }
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "php-http/discovery": true
+    },
+    "sort-packages": true
+  },
+  "suggest": {
+    "ext-intl": "Required to format Currency field"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "version": "4.32.14"
+}
