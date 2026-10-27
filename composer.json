@@ -22,7 +22,6 @@
         "laravel/ui": "^4.6.3",
         "nesbot/carbon": "^2.62.1|^3.0",
         "rap2hpoutre/fast-excel": "^3.2|^4.1|^5.0",
-        "spatie/once": "^1.1|^2.0|^3.0",
         "symfony/console": "^6.0|^7.0|^8.0",
         "symfony/finder": "^6.0|^7.0|^8.0",
         "symfony/polyfill-intl-icu": "^1.22.1",
@@ -66,7 +65,8 @@
         "sort-packages": true
     },
     "suggest": {
-        "ext-intl": "Required to format Currency field"
+        "ext-intl": "Required to format Currency field",
+        "spatie/once": "Optional on Laravel <=12; Laravel 13 replaces once() helpers."
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
