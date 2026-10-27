@@ -8,8 +8,7 @@ Private, license-bound fork of Laravel Nova **4.32.14** with targeted patches so
 
 | Item | Value |
 |------|--------|
-| Composer name | `asrepoya/nova` |
-| Replaces | `laravel/nova` (same version) |
+| Composer name | `laravel/nova` (drop-in private replacement) |
 | PHP namespace | `Laravel\Nova\` (unchanged) |
 | Base version | 4.32.14 |
 
@@ -21,7 +20,7 @@ Official Nova 4 tops out at Laravel 12. Official Laravel 13 support ships in **N
 
 ### `composer.json`
 
-- Renamed package to `asrepoya/nova` with `"replace": { "laravel/nova": "self.version" }` so third-party Nova 4 packages keep resolving.
+- Kept Composer name `laravel/nova` for drop-in path/VCS replacement of the official package.
 - Widened `illuminate/support` to `^10.48.29|^11.44.1|^12.0|^13.0`.
 - Widened `inertiajs/inertia-laravel` to `^0.6\|^1\|^2`.
 - Widened Symfony components to `^6|^7|^8`.
@@ -55,16 +54,17 @@ Official Nova 4 tops out at Laravel 12. Official Laravel 13 support ships in **N
   "repositories": [
     {
       "type": "path",
-      "url": "../nova4-laravel13"
+      "url": "../nova4-laravel13",
+      "options": { "symlink": true }
     }
   ],
   "require": {
-    "asrepoya/nova": "4.32.14"
+    "laravel/nova": "^4.0"
   }
 }
 ```
 
-Or VCS:
+Or VCS (private remote):
 
 ```json
 {
@@ -75,12 +75,12 @@ Or VCS:
     }
   ],
   "require": {
-    "asrepoya/nova": "4.32.14"
+    "laravel/nova": "4.32.14"
   }
 }
 ```
 
-Remove any older path repository that points at stock `laravel/nova` 4.32.14 without these patches.
+Remove any older path repository that points at an unpatched Nova 4.32.14 tree.
 
 ## Verification status
 
