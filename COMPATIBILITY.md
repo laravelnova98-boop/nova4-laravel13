@@ -10,7 +10,7 @@ Private, license-bound fork of Laravel Nova **4.32.14** with targeted patches so
 |------|--------|
 | Composer name | `laravel/nova` (drop-in private replacement) |
 | PHP namespace | `Laravel\Nova\` (unchanged) |
-| Base version | 4.32.14 |
+| Base version | 4.32.14 (fork package version `4.32.15`) |
 
 ## Why this fork exists
 
