@@ -38,6 +38,11 @@ Official Nova 4 tops out at Laravel 12. Official Laravel 13 support ships in **N
 - Hardened `share()` for non-array parent results (Inertia 2).
 - Only disable Inertia SSR when the config key exists.
 
+### `src/Fields/FormData.php`
+
+- Widened `FormData::make()` so its declaration stays compatible with `Illuminate\Support\Fluent::make($attributes = [])` (added in Laravel 12.9+ / present in Laravel 13). Without this, PHP fatals on class load: *Declaration of FormData::make(...) must be compatible with Fluent::make(...)*.
+- Runtime still requires a `NovaRequest` as the first argument (throws `InvalidArgumentException` otherwise).
+
 ## Host application checklist
 
 1. Valid Nova license + `NOVA_LICENSE_KEY` for production hosts.

@@ -40,12 +40,21 @@ class FormData extends Fluent
     /**
      * Make fluent payload from request.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * Signature widened for compatibility with Illuminate\Support\Fluent::make($attributes = [])
+     * (Laravel >= 12.9 / 13). Callers must still pass a NovaRequest as the first argument.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest|array<string, mixed>  $request
      * @param  array<string, mixed>  $fields
      * @return static
      */
-    public static function make(NovaRequest $request, array $fields)
+    public static function make($request = [], array $fields = [])
     {
+        if (! $request instanceof NovaRequest) {
+            throw new \InvalidArgumentException(
+                sprintf('%s::make() requires a %s instance as the first argument.', static::class, NovaRequest::class)
+            );
+        }
+
         if (! is_null($request->resource) && ! is_null($request->resourceId)) {
             $fields["resource:{$request->resource}"] = $request->resourceId;
         }
